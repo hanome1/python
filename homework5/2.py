@@ -9,10 +9,11 @@ def num_check(user_num):
 def counter(val, even = 0, odd = 0):
     if val <= 0:
         print(f"четных: {even}, нечетных: {odd}")
-        return None
-    if val % 10 % 2 == 0:
-        even+=1
+        #return None
     else:
-        odd+=1
-    counter(val // 10, even, odd)
+        if val % 10 % 2 == 0:
+            even+=1
+        else:
+            odd+=1
+        counter(val // 10, even, odd)
 counter(num_check(input("Введите число: ")))

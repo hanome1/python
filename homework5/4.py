@@ -9,12 +9,13 @@ def num_check(user_num):
 def sequence(n, res = (-2)):
     if n == 0 and res == (-2):
         print("последовательность не имеет чисел")
-        return None
-    if n == 0:
-        print(res)
-        return res
-    res *= (-.5)
-    sequence(n-1, res)
+        #return None
+    else:
+        if n == 0:
+            print(res)
+            return res
+        res *= (-.5)
+        sequence(n-1, res)
     
 
 sequence(num_check(input("Введите число: ")))
