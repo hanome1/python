@@ -9,10 +9,11 @@
 """
 
 import subprocess
+import chardet
 targets = [['ping', 'yandex.ru'],['ping', 'youtube.com']]
 for item in targets:
     process = subprocess.Popen(item, stdout=subprocess.PIPE)
     for line in process.stdout:
         print(line)
-        line = line.decode('cp866').encode('utf-8')
-        print(line.decode('utf-8'))
+        res = chardet.detect(line)
+        print(line.decode(res['encoding']))

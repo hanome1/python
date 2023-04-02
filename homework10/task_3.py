@@ -10,20 +10,10 @@
 придумайте как это сделать
 """
 
-"""
+
 items = ['attribute', 'класс', 'функция', 'type']
 for el in items:
-    el = b''
-"""
-try:
-    #s1 = b'attribute'
-    s2 = b'класс'
-    #s3 = b'функция'
-    #s4 = b'type'
-except SyntaxError:
-    print('oops')
-finally:
-    print('oops')
-
-#не нашел, как в b строку внедрить аргумент
-#не обрабатывается исключение :(
+    try:
+        print(bytes(el, 'ascii'))
+    except UnicodeEncodeError:
+        print(f'"{el}" не может быть записан в виде байтовой строки')
