@@ -17,3 +17,4 @@ for item in targets:
         print(line)
         res = chardet.detect(line)
         print(line.decode(res['encoding']))
+#
