@@ -1,16 +1,13 @@
-class FoodType(object):
-  def __init__(self, ftype):
-    self.ftype = ftype
-      
-  def getFtype(self):
-    return self.ftype
-    
-class VegType(FoodType):
-  def vegFoods(self):
-    return {'Spinach', 'Bitter Guard'}
-    
+class Meta(type):
+    a = None
+    def __init__(self, clsname, bases, clsdict):
+        if a is None:
+            a = self
+        return a
 
-vType = VegType(ftype = 'Vegetarian')
-print(vType.getFtype())
-print(vType.vegFoods())
-    
+class MyClass(metaclass = Meta):
+    def __init__(self):
+        return self
+obj1 = MyClass()
+obj2 = MyClass()
+print(obj1 is obj2)
